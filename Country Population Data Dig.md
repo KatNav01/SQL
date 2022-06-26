@@ -1,4 +1,5 @@
 # Country Population Data Dig
+[Jump to Code](##code)
 
 ```
 CREATE TABLE countries(
@@ -217,7 +218,7 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 ```
 
 
-
+## Code
 
 ### CASE command
 
