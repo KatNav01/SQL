@@ -1,4 +1,4 @@
-
+# Sales Charts
 
 ## 1: How many orders were placed in January?
 
