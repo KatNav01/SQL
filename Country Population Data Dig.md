@@ -1,6 +1,5 @@
 # Country Population Data Dig
 
-[Code]
 
 
 ```
