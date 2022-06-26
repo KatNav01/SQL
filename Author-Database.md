@@ -1,6 +1,8 @@
-/* Create table about the people and what they do here */
+# Author Database
 
+## Create table about the people and what they do here
 
+```
 CREATE TABLE authors (id INTEGER PRIMARY KEY,
     fullname TEXT,
     birthdate TEXT,
@@ -18,7 +20,7 @@ CREATE TABLE books (id INTEGER PRIMARY KEY,
     title TEXT,
     release_date INTEGER,
     adaptation TEXT);
-    
+   
 INSERT INTO books (author_id, title, release_date, adaptation)
     VALUES (1, "Coraline", 2002, "Yes");
 INSERT INTO books (author_id, title, release_date, adaptation)
@@ -48,11 +50,13 @@ INSERT INTO co_written_books ( author1_id,  author2_id)
 INSERT INTO co_written_books ( author1_id,  author2_id)
     VALUES(2, 3);
 
-    
-/* Queries start here: */
+```
 
-/* Multiple JOINS: Which authors have worked together? */
+## Queries start here:
 
+### Multiple JOINS: Which authors have worked together?
+
+```
 SELECT  a.fullname AS "Author 1", 
         b.fullname AS "Author 2"
     FROM co_written_books AS co
@@ -61,9 +65,11 @@ SELECT  a.fullname AS "Author 1",
     JOIN authors as b
         ON co.author2_id = b.id
 ;
+```
         
-/* GROUP BY Statement: What books have which authors worked on? */
+### GROUP BY Statement: What books have which authors worked on? 
 
+```
 SELECT  authors.fullname AS "Author", 
         books.title AS "Book"
     FROM books
@@ -71,9 +77,11 @@ SELECT  authors.fullname AS "Author",
     ON books.author_id = authors.id
     GROUP BY books.title
 ;
+```
     
-/* Which books have been written since 2000? */
+### Which books have been written since 2000? 
 
+```
 SELECT  authors.fullname AS "Author",  
         books.title AS "Book Title", 
         books.release_date AS "Release Date"
@@ -82,9 +90,11 @@ SELECT  authors.fullname AS "Author",
         ON books.author_id = authors.id
     WHERE books.release_date > 2000
 ;
+```
 
-/* WHERE Clause: Which authors have written books that have been adapted into movies? */
+### WHERE Clause: Which authors have written books that have been adapted into movies? */
 
+```
 SELECT authors.fullname AS "Authors with Adapted Books",
         books.title AS "Book"
     FROM books
@@ -93,10 +103,13 @@ SELECT authors.fullname AS "Authors with Adapted Books",
     WHERE books.adaptation LIKE "%yes"
     GROUP BY authors.fullname
 ;
+```
 
-/* To experiment with different methods of answering and displaying the same question, find another way to query the above question. */
-/* CASE Statment and LIKE Operator: Which authors have written books that have been adapted into movies? */
+## To experiment with different methods of answering and displaying the same question, find another way to query the above question.
 
+### CASE Statment and LIKE Operator: Which authors have written books that have been adapted into movies?
+
+```
 SELECT books.title AS "Book Title", 
     CASE 
         WHEN books.adaptation LIKE "%Yes" THEN "Adapted"
@@ -108,9 +121,11 @@ FROM books
     GROUP BY books.title
     ORDER BY "Adapted Status"
 ;
+```
 
-/* WHERE Clause: Which books have been released in the last 30 years and are adapted? */
+## WHERE Clause: Which books have been released in the last 30 years and are adapted?
 
+```
 SELECT  authors.fullname AS "Author",
         books.title AS "Title",
         books.adaptation AS "Adaptation Status"
@@ -120,3 +135,4 @@ SELECT  authors.fullname AS "Author",
     WHERE books.adaptation LIKE "%yes"
         AND release_date > 1992
 ;
+```
