@@ -28,7 +28,8 @@ SELECT
 ;
 ```
 
-## 4: List all the movies and tv shows in alphabetical order.
+## 4: List all the movies and tv shows in alphabetical order.
+
 
 ```
 SELECT 
@@ -38,7 +39,7 @@ ORDER BY title
 ;
 ```
 
-## 5: Who was the Director for the movie Bright Star? 
+## 5: Who was the Director for the movie Bright Star? 
 
 ```
 SELECT
@@ -51,7 +52,7 @@ WHERE title='Bright Star'
 ;
 ```
 
-## 6: What is the oldest movie in the database and what year was it made? 
+## 6: What is the oldest movie in the database and what year was it made?  
 
 ```
 SELECT
