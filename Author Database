@@ -1,6 +1,6 @@
 /* Create table about the people and what they do here */
 
-```sql
+
 CREATE TABLE authors (id INTEGER PRIMARY KEY,
     fullname TEXT,
     birthdate TEXT,
@@ -47,7 +47,7 @@ INSERT INTO co_written_books ( author1_id,  author2_id)
     VALUES(1, 2);
 INSERT INTO co_written_books ( author1_id,  author2_id)
     VALUES(2, 3);
-```
+
     
 /* Queries start here: */
 
