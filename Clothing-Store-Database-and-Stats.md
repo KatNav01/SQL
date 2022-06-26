@@ -48,5 +48,5 @@ ORDER BY price DESC;
 ```
 ```
 SELECT * FROM clothing WHERE rating < 4
-```
 ORDER BY price ASC;
+```
