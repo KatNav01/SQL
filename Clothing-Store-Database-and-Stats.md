@@ -1,3 +1,6 @@
+## Clothing Sotre Database and Stats
+
+```
 CREATE TABLE clothing 
 (id INTEGER PRIMARY KEY, 
 name TEXT, 
@@ -20,18 +23,30 @@ INSERT INTO clothing VALUES(12, "Sports Bra", 15, 4.5, 12);
 INSERT INTO clothing VALUES(13, "Thermal Longjohns", 13, 4, 18);
 INSERT INTO clothing VALUES(14, "Sports Sneakers", 120, 5, 21);
 INSERT INTO clothing VALUES(15, "Hiking Boots", 150, 5, 24);
+```
 
+```
 SELECT * FROM clothing;
+```
 
+```
 SELECT * FROM clothing 
 ORDER BY price DESC;
-
+```
+```
 SELECT AVG(price) FROM clothing;
+```
+```
 SELECT MIN(price) FROM clothing;
+```
+```
 SELECT MAX(price) FROM clothing;
-
+```
+```
 SELECT * FROM clothing WHERE rating > 4
 ORDER BY price DESC;
-
+```
+```
 SELECT * FROM clothing WHERE rating < 4
+```
 ORDER BY price ASC;
