@@ -1,3 +1,6 @@
+
+
+```
 CREATE TABLE countries(
    name                    TEXT PRIMARY KEY,
    population              INTEGER,
@@ -211,49 +214,75 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('U.S. Virgin Islands',104425,-0.15,-153,298,350,-451,2.00,43.00,0);
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Seychelles',98347,0.62,608,214,460,-200,2.50,34.00,0);
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Antigua and Barbuda',97929,0.84,811,223,440,0,2.00,34.00,0);
+```
 
 
 
 
+### CASE command
 
-/*CASE command*/
-
+```
 SELECT name,
     CASE
-        WHEN population_change > 0 THEN                  "Growing Country"
-        WHEN population_change < 0 THEN                  "Shrinking Country"
+        WHEN population_change > 0 THEN "Growing Country"
+        WHEN population_change < 0 THEN "Shrinking Country"
     END AS "Country Growth Status"
 FROM countries
 ORDER BY "Country Growth Status";
-    
-    /*AND OR STATEMENT*/
-    
-    SELECT name, population, density_per_sq_km, area_sq_km FROM countries 
-        WHERE density_per_sq_km > 1000
-        AND area_sq_km <500
-        ORDER BY population;
-        
-    /* Min, Max, and Average */
-    SELECT name, SUM(population) AS "Lowest Three Populations" 
-    FROM countries
-    GROUP BY name
-    HAVING "Lowest Three Countries" <= 100000;
-    
-    SELECT name, SUM(population) AS "Top Three Populations" 
-    FROM countries
-    GROUP BY population
-    HAVING "Top Three Populations" > 300000000;
-    
-    SELECT name, SUM(population) AS "Bottom Three Populations" 
-    FROM countries
-    GROUP BY population
-    HAVING "Bottom Three Populations" < 105000;
+```    
+
+## AND OR STATEMENT
+
+```    
+SELECT 
+   name, 
+   population, 
+   density_per_sq_km, 
+   area_sq_km 
+FROM countries 
+WHERE density_per_sq_km > 1000
+AND area_sq_km <500
+ORDER BY population;
+```
+
+## Min, Max, and Average
+
+
+```
+SELECT 
+   name, 
+   SUM(population) AS "Lowest Three Populations" 
+FROM countries
+GROUP BY name
+HAVING "Lowest Three Countries" <= 100000;
+```
+ 
+```
+SELECT 
+   name, 
+   SUM(population) AS "Top Three Populations" 
+FROM countries
+   GROUP BY population
+   HAVING "Top Three Populations" > 300000000;
+ ```
+
+```
+SELECT 
+   name, 
+   SUM(population) AS "Bottom Three Populations" 
+FROM countries
+   GROUP BY population
+   HAVING "Bottom Three Populations" < 105000;
+```
     
     SELECT ROUND(AVG(population)) AS "Average World Population"
     FROM countries;
     
-    
-    SELECT name, median_age AS "Median Age" 
+```    
+SELECT 
+   name, 
+   median_age AS "Median Age" 
 FROM countries
-GROUP BY median_age 
-HAVING median_age < 20;
+   GROUP BY median_age 
+   HAVING median_age < 20;
+```
