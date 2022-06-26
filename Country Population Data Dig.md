@@ -1,7 +1,7 @@
 # Country Population Data Dig
-[Jump to Code](##code)
+
 [testing link]([https://github.com/KatNav01/SQL/edit/main/Country%20Population%20Data%20Dig.md](https://github.com/KatNav01/SQL/blob/main/Country%20Population%20Data%20Dig.md)
-[Header link](https://github.com/KatNav01/SQL/edit/main/country_population_data_dig.md##code)
+
 
 ```
 CREATE TABLE countries(
