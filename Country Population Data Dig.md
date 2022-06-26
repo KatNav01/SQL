@@ -1,5 +1,6 @@
 # Country Population Data Dig
 [Jump to Code](##code)
+[Header link](KatNav01/SQL/edit/main/country_population_data_dig.md##code)
 
 ```
 CREATE TABLE countries(
