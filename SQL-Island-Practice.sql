@@ -151,3 +151,4 @@ UPDATE inhabitant
   SET state = 'friendly' 
   WHERE personid = 8;
 ```
+
